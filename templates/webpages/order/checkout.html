@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main style="min-height: 50vh;" class="about-us">
+  <div class="banner">
+
+    <h1 class=" mt-4 text-center">
+      Checkout
+    </h1>
+  </div>
+
+
+ 
+  <section class="container mt-4 ">
+    <div class="row ">
+      <div class="col-md-4 mb-4">
+        <img src="{% static 'img/contactus.svg' %}" class="img-fluid" alt="img">
+      </div>
+      <div class="col-md-4 mb-2 mt-4">
+
+        <form method="POST" action="{% url 'order' %}">
+          {% csrf_token %}
+
+          {% if user.is_authenticated %}
+          <input type="hidden" name="user_id" value="{{user.id}}">
+          {% endif %}
+
+          <div class="form-row">
+
+            <div class="form-group col-lg-6">
+              {% if user.is_authenticated %}
+              <input name="first_name" value="{{user.first_name}}" type="first_name" class="form-control"
+                placeholder="Name" required>
+              {% endif %}
+            </div>
+
+            <div class="form-group col-lg-6">
+              {% if user %}
+              <input name="phone" type="phone" value="{{user.phone}}" class="form-control" placeholder="Phone Number" required>
+              {% else %}
+              <input name="phone" type="phone" class="form-control" placeholder="Phone Number" required>
+              {% endif %}
+            </div>
+
+          </div>
+
+          <div class="form-row">
+
+            <div class="form-group col-lg-12">
+              {% if user.is_authenticated %}
+              <input name="email" type="email" value="{{user.email}}" class="form-control" placeholder="Email" required>
+              {% endif %}
+            </div>
+
+            <div class="form-group col-lg-12">
+              <h4>Plan: <span style=" font-weight: bold;">{{plan}}</span></h4>
+            </div>
+
+            <div class="form-group col-lg-12">
+              <h4>Price: <span style=" font-weight: bold;">₹{{price}}</span></h4>
+            </div>
+
+          </div>
+
+          <input type="hidden" name="amount" value="{{price}}">
+          <input type="hidden" name="plan" value="{{plan}}">
+
+
+          <div class="text-center">
+            <input type="submit" class="btn btn-primary" value="Order">
+          </div>
+
+        </form>
+      </div>
+
+
+    </div>
+  </section>
+
+  </form>
+</main>
+
+{% endblock %}

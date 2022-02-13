@@ -1,0 +1,392 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*{
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+
+body{
+    font-family: 'Poppins';
+}
+.navbarMenu{
+    font-size: 1.25rem;
+}
+
+
+
+.navbar-brand{
+    font-size: 25px;
+    font-weight: bold;
+    height:67px;
+    line-height: 65px;
+}
+.form1{
+    position: relative;
+}
+.social1{
+    position: absolute;
+    margin-top: 190px;
+}  
+.insideContainer{
+    margin-left: 8vw;
+}
+
+@media only screen and (min-width: 955px) {
+    .pricingContainer{ 
+        margin: auto;
+    }
+    .allcards{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .stepstitle{
+        margin-left: -20px;
+      }
+  }
+  @media only screen and (max-width: 1199px) and (min-width: 769px)  {
+       
+        .stepcard{
+            min-width: 200px;
+            height: fit-content;
+        }
+  }
+ 
+
+.steps{
+    background-color: #007BFF;
+    
+}
+.stepsrow{
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-left: 0;
+}
+
+.stepcard{
+    margin: 10px;
+    background-color: #005BF6;
+    border-radius: 10px;
+    min-height: 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.circle{
+    position: absolute;
+    width: 50px;
+    aspect-ratio: 1/1;
+    background-color: white;
+    top: -25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container h2{
+    padding-right: 20px;
+    font-size: 40px;
+}
+
+.circle h5{
+    font-weight: bold;
+    font-size:20px;
+    padding-top: 6px;
+}
+
+.cardcontent h5, h6{
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.cardcontent h5{
+    font-weight: bold;
+    margin-top: 50px;
+    
+}
+
+.cardcontent h6{
+    display: flex;
+    text-align: center;
+    margin: 10px 20px 20px 20px;
+    font-size: 16px;
+}
+
+
+/* Service Section CSS */
+
+.servicesection{
+    margin: 0;
+    padding: 0;
+}
+.content-box{
+    background:#161C27 ;
+    height: fit-content;
+    color: #fff;
+    padding-bottom: 60px;
+}
+.servicescontainer h1{
+    text-align: center;
+    padding-top: 60px;
+}
+
+/* .icon svg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    margin-left: 4px;
+} */
+.servicescontainer h1::after{
+    content: '';
+    background: #007BFF;
+    display: block;
+    height: 3px;
+    width: 220px;
+    margin: 20px auto 50px;
+}
+.blogtitle::after{
+    content: '';
+    background: #007BFF;
+    display: block;
+    height: 3px;
+    width: 2500px;
+    margin: 20px auto 50px;
+}
+
+.service .icon{
+    font-size: 30px;
+    display: inline-block;
+    margin:20px;
+    padding: 18px;
+    height: 70px;
+    width: 70px;
+    border: 1px solid #007BFF;
+    border-radius: 50%;
+    color: #007BFF;
+}
+
+.service p{
+    font-size: 15px;
+    margin-top: 10px;
+    color: #fff;
+    padding: 20px;
+}
+.service span{
+    color: #007BFF;
+    transition: .5s;
+}
+.service .col-md-4:hover{
+    background: linear-gradient(rgba(0,0,0,0.5),#007BFF);
+    cursor: pointer;
+    color: #000;
+    box-shadow: -5px 5px 10px 0 rgba(0,0,0,0.4);
+    transition: .5s;
+}
+
+.service .col-md-4:hover .icon{
+    border: 1px solid #fff;
+    color: #fff;
+
+}
+
+.service .col-md-4:hover p{
+    color: #fff;
+}
+
+.service .col-md-4:hover span{
+    color: #fff;
+}
+
+/* Footer CSS */
+
+
+footer{
+    color:rgb(173, 173, 173);
+  bottom: 0px;
+  width: 100%;
+  background: #111;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #007BFF;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #007BFF;
+  color: white;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+  color: #007BFF;
+}
+.center .content .fas:hover{
+  background: #007BFF;
+  color: white;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right  .msg{
+  margin-top: 10px;
+}
+
+.right {
+  margin-top: 10px;
+}
+
+
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: grey;
+}
+.bottom center a{
+  color: #007BFF;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+@media screen and (max-width: 900px) {
+  footer{
+    position: relative;
+    bottom: 0px;
+  }
+  .main-content{
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .main-content .box{
+    margin: 5px 0;
+  }
+}
+
+.content ul li{
+    list-style: none;
+    margin-top: 10px;
+    font-size: 17px;
+    
+}
+.content ul li a{
+    text-decoration: none;
+}
+
+/* footer sticky */
+@media only screen and (min-width: 892px){
+    .orderFooter{
+      min-height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+  .nav-item{
+    margin-left:0px;
+  }
+  .navbar-brand{
+    margin-left: 5px;
+  }
+}
+
+/* css 11/7 */
+@media (max-width: 1200px){
+  .insideContainer{
+    margin-left: 0px;
+  }
+  .navbar li {
+    margin-left : .3em;
+    
+}
+  
+}
+
+@media (min-width: 1200px){
+  .navbar li {
+      margin-left : 1em;
+      margin-right : 1em;
+      font-size: 1.2em;
+  }
+
+}
+
+.right{
+  margin-left: 73px;
+}

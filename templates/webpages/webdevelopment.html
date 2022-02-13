@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- Pricing -->
+
+
+<body>
+  <main>
+    <div class="container-xl pricingContainer  py-3">
+      <header>
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Pricing</h1>
+          <p class="fs-5 text-muted">Order your website with unbeatable pricing in the market. It'll reflect your brand aesthetic and encourage your target audience to rely on your business.</p>
+        </div>
+      </header>
+
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">{{basic.all.0.plan_types}}</h4>
+            </div>
+            <div class="features-section card-body">
+              <h1 class="">₹{{basic.all.0.price}}</h1>
+             <p> <del class="text-muted fw-light">₹{{basic.all.0.originalprice}} </del> <span class="text-success ms-2"> {{basic.all.0.discountpercent}} off </span></p>
+             <div class="d-inline-block" >
+              <ul class=" list-unstyled mt-3 mb-4">
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="pt-1 me-2 fa fa-check-circle"></i>Upto 05 Web Pages</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Mobile Responsive</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>2 GB Web Space</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Domain Registration for 1 year</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Google Analytics Integration</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Mobile & SEO Friendly</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Social Media Links Integration</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Blog Setup</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>SSL/HTTPS Intregration for 3 Months</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Admin Control Panel</li>
+              </ul>
+            </div>
+              <form method="POST" action="{% url 'checkout' %}" >
+                {% csrf_token %}
+                <input hidden type="text" name="plan" value="{{basic.all.0.plan_types}}">
+                <input hidden type="text" name="price" value="{{basic.all.0.price}}">
+                <input  type="submit" class="w-100 btn btn-lg btn-outline-primary" value="Order Now">
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header py-3">
+              <h4 class="my-0 fw-normal">{{standard.all.0.plan_types}}</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">₹{{standard.all.0.price}}</h1>
+             <p> <del class="text-muted fw-light">₹{{standard.all.0.originalprice}} </del> <span class="text-success ms-2"> {{standard.all.0.discountpercent}} off </span></p>
+             <div class="d-inline-block" > 
+             <ul class="list-unstyled mt-3 mb-4">
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fas fa-arrow-alt-circle-up"></i>Everything in Basic</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Upto 10 Web Pages</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>10 GB Web Space</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>SSL/HTTPS Intregration for 6 Months</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Upto 2 Updates Per Year</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Fully Customised Design</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Authentication System</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>2 Professional Email</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Payment Gateway Integration</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Enquiry Contact Form</li>
+
+              </ul>
+            </div>
+              <form method="POST" action="{% url 'checkout' %}" >
+              {% csrf_token %}
+              <input hidden type="text" name="plan" value="{{standard.all.0.plan_types}}">
+              <input hidden type="text" name="price" value="{{standard.all.0.price}}">
+              <input  type="submit" class="w-100 btn btn-lg btn-primary" value="Order Now">
+
+            </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm border-primary">
+            <div class="card-header py-3 text-white bg-primary border-primary">
+              <h4 class="my-0 fw-normal">{{premium.all.0.plan_types}}</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">₹{{premium.all.0.price}}</h1>
+             <p> <del class="text-muted fw-light">₹{{premium.all.0.originalprice}} </del> <span class="text-success ms-2"> {{premium.all.0.discountpercent}} off </span></p>
+             <div class="d-inline-block" >
+              <ul class="list-unstyled mt-3 mb-4">
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fas fa-arrow-alt-circle-up"></i>Everything in Standard</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Upto 15 Web Pages</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Unlimited Web Space</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>SSL/HTTPS Intregration for 1 Year</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Upto 3 Updates Per Year</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Google Map Integration</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Live Chat </li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>5 Professional Email</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>API Integration</li>
+                <li class="mt-2 d-flex" ><i style="color: #1EB021;" class="me-2 pt-1 fa fa-check-circle"></i>Code Provided</li>
+              </ul>
+              </div>
+              <form method="POST" action="{% url 'checkout' %} ">
+                {% csrf_token %}
+                <input hidden type="text" name="plan" value="{{premium.all.0.plan_types}}">
+                <input hidden type="text" name="price" value="{{premium.all.0.price}}">
+              <input type="submit" class="w-100 btn btn-lg btn-primary" value="Order Now" >
+              </form>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </main>
+
+
+  </div>
+</body>
+
+</html>
+
+{% endblock %}

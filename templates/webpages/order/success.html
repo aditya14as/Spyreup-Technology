@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div style="min-height: 50vh;" class="container">
+    <div class="d-flex justify-content-center">
+        <h1>Payment Succesful</h1>
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        <img style="height: 40vh;" src="{% static '/img/successful.svg' %}" alt="Payment Succesful">
+    </div>
+    <div class="mt-2 btn d-flex justify-content-center">
+        <a href="{% url 'dashboard' %}" type="button" class="btn btn-outline-primary btn-lg mb-4">Go to Order</a>
+      </div>
+</div>
+
+{% endblock %}

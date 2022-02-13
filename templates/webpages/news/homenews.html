@@ -1,0 +1,50 @@
+{% extends 'webpages/news/newsbase.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="mt-2 row g-3" id="featured-3">
+      <h1 class="d-flex ms-2 justify-content-start">Tech News</h1>
+      <div class="col-md-8">
+        {% for i in articles %}
+        <div class="col-md-12">
+          <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">{{i.author}}</strong>
+              <h3 class="m-1">{{i.title}}</h3>
+              <!-- <div class="mb-1 text-muted">i.publishedAt</div> -->
+              <p class="card-text mx-1">{{i.description}}</p>
+              <a href="{{ i.url }}" class="stretched-link mx-1">Continue reading</a>
+            </div>
+            <div class="col-auto">
+             <img src="{{i.urlToImage|default:'/static/img/news.jpg'}}" alt="img" class="" width="250px" height="100%">
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+      <div class="d-sm-none d-md-block d-sm-block d-none col-md-4">
+        <div class="position-sticky" style="top: 1rem;">
+          <div class="p- mb-3 bg-light rounded">
+            <h4 class="fst-italic">About</h4>
+            <p class="mb-0">SpyreUp is a best development and design company that focuses on quality, innovation, & speed. We utilized technology to bring results to grow our clients businesses. We pride ourselves in great work ethic, integrity, and end-results.</p>
+          </div>
+  
+  
+          <div class="p-4">
+            <h4 class="fst-italic">Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/aditya14as">GitHub</a></li>
+              <li><a href="https://twitter.com/ItzAditya14">Twitter</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100006568030856">Facebook</a></li>
+              <li><a href="https://www.instagram.com/aditya14_as/">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/aditya-singh-b219a5185/">Linkedin</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

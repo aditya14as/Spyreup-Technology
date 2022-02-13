@@ -1,0 +1,46 @@
+{% extends 'webpages/blog/blogbase.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row g-5">
+      <div class="col-md-8">
+        
+  
+        <article class="blog-post">
+         <h2 class="mt-4 blog-post-title">{{post.title}}</h2>
+          <p class="blog-post-meta">{{post.pub_date}} <a href="{{post.writter_social}}">{{post.writter}}</a></p>
+          <div class="fb-like my-1" data-href="https://spyreup.tech/blog/blogpost/{{post.post_id}}" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+          <p>{{post.heading}}</p>
+          
+          <div class="container">{{post.content|safe}}</div>
+          <div class="fb-comments mb-5" data-href="https://spyreup.tech/blog/blogpost/{{post.post_id}}" data-width="" data-numposts="5"></div>
+       
+  
+        
+  
+      </div>
+  
+      <div class="d-md-block d-none d-sm-block d-sm-none col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <div class="p-4 mb-3 bg-light rounded">
+            <h4 class="fst-italic">About</h4>
+            <p class="mb-0">SpyreUp is a best development and design company that focuses on quality, innovation, & speed. We utilized technology to bring results to grow our clients businesses. We pride ourselves in great work ethic, integrity, and end-results.</p>
+          </div>
+  
+  
+          <div class="dp-4">
+            <h4 class="fst-italic">Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li><a href="https://github.com/aditya14as">GitHub</a></li>
+              <li><a href="https://twitter.com/ItzAditya14">Twitter</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100006568030856">Facebook</a></li>
+              <li><a href="https://www.instagram.com/aditya14_as/">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/aditya-singh-b219a5185/">Linkedin</a></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

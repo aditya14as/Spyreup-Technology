@@ -1,0 +1,224 @@
+{% extends 'homebase.html' %}
+{% load static %}
+{% block content %}
+{% load tz %}
+
+
+<!-- Crousel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner" data-bs-interval="3000">
+    <div class="carousel-item active">
+    <a href="{% url 'webdevelopment' %}" target="_blank">
+      <img src="{{sliders.all.0.photo.url}}" class="d-block w-100" alt="slider1">
+    </a>
+    </div>
+    <div class="carousel-item ----" data-bs-interval="3000">
+      <a href="{% url 'webdevelopment' %}" target="_blank">
+      <img src="{{sliders.all.1.photo.url}}" class="d-block w-100" alt="slider2">
+    </a>
+    </div>
+    <div class="carousel-item ----" data-bs-interval="3000">
+      <a href="{% url 'webdevelopment' %}" target="_blank">
+      <img src="{{sliders.all.2.photo.url}}" class="d-block w-100" alt="slider3">
+    </a>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<!-- Features -->
+<div class="servicesection">
+  <section class="service">
+    <div class="content-box">
+      <div class="container servicescontainer">
+        <h1>Our Services</h1>
+      <div class="row service">
+
+
+        <div class="col-md-4 text-center">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="d-flex justify-content-centre bi bi-brush-fill" viewBox="0 0 16 16">
+              <path d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z"/>
+            </svg>
+          </div>
+          <div>
+          <h3>Web <span>Design</span></h3>
+          <p>Adding value to your business by giving an attractive look and feel to your business website with Responsive Web Designing..</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="d-flex justify-content-centre bi bi-cart-check-fill" viewBox="0 0 16 16">
+              <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708z"/>
+            </svg>
+          </div>
+          <div>
+          <h3>E-Commerce <span>Website</span></h3>
+          <p>Enhance your online presence with High-Quality E-Commerce website for creating an effective e-Store to promote and manage your sales.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="d-flex justify-content-centre bi bi-file-lock2-fill" viewBox="0 0 16 16">
+              <path d="M7 6a1 1 0 0 1 2 0v1H7V6z"/>
+              <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm-2 6v1.076c.54.166 1 .597 1 1.224v2.4c0 .816-.781 1.3-1.5 1.3h-3c-.719 0-1.5-.484-1.5-1.3V8.3c0-.627.46-1.058 1-1.224V6a2 2 0 1 1 4 0z"/>
+            </svg>
+          </div>
+          <div>
+          <h3>SSL/HTTPS <span>Integration</span></h3>
+          <p>SSL integration to keep your internet connection secure and safeguarding any sensitive data that is being sent between two systems, including potential personal details.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 text-center">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="d-flex justify-content-centre bi bi-graph-up" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+          </div>
+          <div>
+          <h3>Google <span>Analytics</span></h3>
+          <p>Google Analytics integration to analyze in-depth detail about the visitors on your website that provides valuable insights that can help you to shape the success strategy of your business.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 text-center">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="d-flex justify-content-centre align-items-center bi bi-person-circle" viewBox="0 0 16 16">
+              <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+            </svg>
+          </div>
+          <div>
+          <h3>Admin <span>Panel</span></h3>
+          <p>Using Admin Panel you can add/edit/delete/update any content on your website without the writing a single bit of code.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-4 text-center">
+          <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="d-flex justify-content-centre bi bi-newspaper" viewBox="0 0 16 16">
+              <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+              <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+            </svg>
+          </div>
+          <div>
+          <h3>Blog &<span> News</span></h3>
+          <p>We provide global technology and information services that connect people to the news they need from top news channels. You can also read amazing blogs here.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Blogs -->
+<div class="container">
+  <div class=" container px-4 py-5" id="featured-3">
+    <div class="d-flex justify-content-center ">
+    <h1  class=" Blogtitle pb-2 mb-3">Recent Blogs</h1></div>
+    <div class="row mb-0">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {% for i in blogs %}
+          <div class="col my-4">
+            <div class="card h-100">
+              <div class="card-body position-relative">
+                <img style="height: 250px;" src="{{i.photo.url}}" class="card-img-top img-thumbnail" alt="...">
+                <h5 class="mb-2 badge bg-success">{{i.title}}</h5>
+                <p class="card-text">{{i.heading}}</p>
+                <a href="/blog/blogpost/{{i.post_id}}"
+                  class="position-absolute bottom-0 start-3 stretched-link">Continue reading</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">{{i.pub_date}}</small>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="mt-2 d-flex justify-content-center">
+      <a href="{% url 'blog' %}" type="button" class="btn btn-outline-primary btn-lg">Explore More Blogs</a>
+    </div>
+  </div>
+</div>
+
+
+ 
+
+ <div class="steps pt-4">
+  <div class="container-xl">
+    <div class="stepstitle">
+      <h3 class="d-flex justify-content-center text-white my-4 fw-bold"> Easy to Start as 1-2-3 </h3>
+    </div>
+    <div class="row allcards">
+
+      <div class="col-md-12 col-lg-12 col-xl-3 mt-4">
+        <div class="stepcard">
+          <div class="circle">
+            <h5>1</h5>
+          </div>
+          <div class="cardcontent">
+            <h5 style="font-size: 1.1em;">Select Your Package</h5>
+            <h6>Packages that fit any investment plan, transparent, unique and fair pricing policy for you.</h6>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-12 col-lg-12 col-xl-3 mt-4">
+        <div class="stepcard">
+          <div class="circle">
+            <h5>2</h5>
+          </div>
+          <div class="cardcontent">
+            <h5 style="font-size: 1.1em;">Request Proposal</h5>
+            <h6>24/7 assistance for you; enquire and receive a detailed proposal and outlining time
+              within 24 hours.</h6>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-12 col-lg-12 col-xl-3 mt-4">
+        <div class="stepcard">
+          <div class="circle">
+            <h5>3</h5>
+          </div>
+          <div class="cardcontent">
+            <h5 style="font-size: 1.1em;" >Development & Support</h5>
+            <h6>Direct contact with a developer throughout your project development plus 1 year free technical
+              support!</h6>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'webpages/blog/blogbase.html' %}
+
+{% block content %}
+<div style="min-height: 50vh;" class="container">
+  <div class="mt-4 mb-4 btn d-flex justify-content-center">
+    <h1>Blogs</h1>
+  </div>
+  
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for i in myposts %}
+        <div class="col mb-5" >
+          <div class="card h-100">
+            <div class="card-body position-relative">
+              <img style="height: 250px;" src="{{i.photo.url}}" class="card-img-top img-thumbnail" alt="...">
+              <h5 class="mb-2 badge bg-success">{{i.title}}</h5>
+              <p  class="card-text">{{i.heading}}</p>
+              <a href="blogpost/{{i.post_id}}" class="position-absolute bottom-0 start-3 stretched-link">Continue reading</a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">{{i.pub_date}}</small>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+       
+      </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<main" class="about-us">
+  <div class="banner">
+
+    <h1 class=" mt-4 text-center">
+      Checkout
+    </h1>
+  </div>
+
+
+  <!-- <form method="POST" action="/">
+  <div class="text-center">
+    
+  </div>
+</form> -->
+</main>
+
+
+{% if payment %}
+<div class= " row text-centre mx-auto orderFooter" >
+  <div class="text-center">
+    <button class="mt-2 mb-5 btn-lg btn btn-outline-primary" id="rzp-button1">Pay Securely with Razorpay</button>
+  </div>
+  <div class=" text-center">
+    <img width="600px" class="my-4 img-fluid" src="{% static '/img/payment.svg' %}" alt="">
+  </div>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+      var options = {
+        "key": "{RAZOR_PAY_KEY}", // Enter the Key ID generated from the Dashboard    
+        "amount": "{{payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise   
+        "currency": "INR",
+        "name": "SpyreUp",
+        "description": "{{payment.plan}}",
+        "image": "{% static 'img/spyreuplogo.png' %}",
+        "order_id": "{{payment.id}}", //This is a sample Order ID. Pass the `id` obtained in the response of Step 1    
+        "callback_url": "{% url 'success' %}",
+        "prefill": {
+          "name": "{{user.first_name}}",
+          "email": "{{user.email}}",
+          
+        },
+        "notes": { "address": "Spyreup Payment" },
+        "theme": { "color": " #007BFF" }
+      };
+      var rzp1 = new Razorpay(options);
+      document.getElementById('rzp-button1').onclick = function (e)
+      {
+        rzp1.open(); e.preventDefault();
+      }
+    </script>
+  {% endif %}
+</div>
+{% endblock %}

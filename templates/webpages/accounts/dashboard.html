@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="min-height: 50vh;">
+
+
+<h1 class=" my-4 text-center">
+    Your Order
+  </h1>
+<div class="table-responsive container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Sl.no.</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Plan</th>
+          <th scope="col">Order Id</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Payment Status</th>
+          <th scope="col">Order Date</th>
+          <th scope="col">Order Status</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for o in orders %}
+        <tr>
+          <th scope="row">{{forloop.counter}}</th>
+          <td>{{o.email}}</td>
+          <td>{{o.phone}}</td>
+          <td>{{o.plan}}</td>
+          <td>{{o.payment_id}}</td>
+          <td>{{o.amount}}</td>
+            {% if o.paid == True %}
+             <td class="text-success">Payment Successful</td>
+             {% else %}
+            <td class="text-danger" >Payment Failed</td>
+            {% endif %}
+
+          <td>{{o.created_date}}</td>
+
+             {% if o.order_status == "Pending" %}
+              <td class="text-warning">Pending</td>
+              {% endif %}
+
+              {% if not o.order_status %}
+              <td class="text-warning">Pending</td>
+              {% endif %}
+
+             {% if o.order_status == "Accepted" %}
+              <td class="text-success">{{o.order_status}}</td>
+              {% endif %}
+
+              {% if o.order_status == "Delivered" %}
+              <td class="text-success">{{o.order_status}}</td>
+              {% endif %}
+
+              {% if o.order_status == "Cancelled" %}
+              <td class="text-danger" >Cancelled</td>
+              {% endif %}
+
+          
+        {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
