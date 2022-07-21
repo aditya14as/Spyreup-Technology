@@ -24,6 +24,6 @@ create, read, update and delete.
 - Added Django Messaging Framework
 - Created a news section using news api.
 ## Website Link
-https://spyreup.tech
+https://spyreup.in
 ## Hosted on
 Amazon Web Service
